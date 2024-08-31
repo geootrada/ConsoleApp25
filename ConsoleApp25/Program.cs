@@ -8,40 +8,39 @@ namespace ConsoleApp25
         {
             Random random = new Random();
             
-            int[] data = new int[30];
+            int[] numbers = new int[30];
 
             int minRandomValue = 1;
             int maxRandomValue = 50;
-            int lastIndex = data.Length - 1;
+            int lastIndex = numbers.Length - 1;
 
             Console.WriteLine("Начальный массив");
-            Console.WriteLine();
 
-            for (int i = 0; i < data.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                data[i] = random.Next(minRandomValue, maxRandomValue);
-                Console.Write(data[i] + " ");
+                numbers[i] = random.Next(minRandomValue, maxRandomValue);
+                Console.Write(numbers[i] + " ");
             }
 
             Console.WriteLine();
             Console.WriteLine("Перечень локальных максимумов");
 
-            if (data[0] > data[1])
+            if (numbers[0] > numbers[1])
             {
-                Console.Write(data[0] + " ");
+                Console.Write(numbers[0] + " ");
             }
 
-            for (int i = 1; i < lastIndex - 1; i++)
+            for (int i = 1; i < lastIndex; i++)
             {
-                if (data[(i - 1)] < data[i] && data[i] > data[(i + 1)])
+                if (numbers[(i - 1)] < numbers[i] && numbers[i] > numbers[(i + 1)])
                 {
-                    Console.Write(data[i] + " ");
+                    Console.Write(numbers[i] + " ");
                 }
             }
 
-            if (data[lastIndex] > data[lastIndex - 1])
+            if (numbers[lastIndex] > numbers[lastIndex - 1])
                 {
-                    Console.Write(data[lastIndex] + " ");
+                    Console.Write(numbers[lastIndex] + " ");
                 }
             
             Console.ReadKey();
